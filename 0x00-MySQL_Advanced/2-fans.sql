@@ -3,7 +3,6 @@
 -- Import this table dump: metal_bands.sql.zip
 -- Column names must be: origin and nb_fans
 
-USE bands_db;
 SELECT
     origin,
     SUM(nb_fans) AS total_fans
