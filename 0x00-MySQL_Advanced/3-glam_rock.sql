@@ -4,5 +4,7 @@
 -- band_name and lifespan (in years until 2022 - please use 2022
 -- instead of YEAR(CURDATE()))
 
-USE band_db;
-
+SELECT band_name, (IFNULL(split, '2020') - formed) AS lifespan
+    FROM metal_bands
+    WHERE FIND_IN_SET('Glam rock', IFNULL(style, "")) > 0
+    ORDER BY lifespan DESC;
